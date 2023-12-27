@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="row question align-items-center">
+    <div class="col-3 d-flex flex-column align-items-center">
+        <img src="{% static '/img/projectmage.jpeg' %}" class="question-image">
+        <div class="container d-flex justify-content-center align-items-center">
+            <button class="btn"><i class="gg-chevron-down-r"></i></button>
+<!--            <div class="h5 mb-0">{{ answer.total_votes }}</div>-->
+            <div class="h5 mb-0">{{ answer.totaly_votes|default:0 }}</div>
+            <button class="btn"><i class="gg-chevron-up-r"></i></button>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1" checked>
+            <label class="form-check-label" for="flexCheckChecked1">
+                Correct!
+            </label>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="question-text">{{ answer.content }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block navbar %}
+
+{% include 'components/regged-navbar.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+<h1>New Question</h1>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Title</label>
+    <input class="form-control" id="exampleFormControlTextarea1"
+           placeholder="Snapshot listener problem">
+    <hr>
+    <label for="exampleFormControlTextarea1" class="form-label">Text</label>
+    <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"
+              placeholder="How to return an array of annotations from a function with a snapshot listener?"></textarea>
+    <hr>
+    <label for="exampleFormControlTextarea1" class="form-label">Tags</label>
+    <input class="form-control" id="exampleFormControlTextarea3" placeholder="swift, firebase, swiftui">
+    <div class="text-danger">error: Wrong tags</div>
+</div>
+<button type="button" class="btn btn-primary">Submit</button>
+
+{% endblock %}

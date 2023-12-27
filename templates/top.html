@@ -1,0 +1,25 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block navbar %}
+
+{% include 'components/regged-navbar.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container d-flex align-items-center">
+    <h1>Top questions</h1>
+    <div class="top-items"><a href="{% url 'index' %}">All questions</a></div>
+</div>
+
+{% for question in page_obj %}
+
+{% include 'components/question-item.html' %}
+
+{% endfor %}
+
+{% include 'components/pagination.html' %}
+
+{% endblock %}

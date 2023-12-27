@@ -1,0 +1,95 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block navbar %}
+
+{% include 'components/regged-navbar.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container d-flex align-items-center">
+    <h1>Questions</h1>
+    <div class="top-items"><a href="{% url 'hot' %}">Hot questions</a></div>
+</div>
+
+{% csrf_token %}
+{% for question in page_obj %}
+
+{% include 'components/question-item.html' %}
+
+{% endfor %}
+
+<!--<div class="row question align-items-center">-->
+<!--    <div class="col-3 d-flex flex-column align-items-center">-->
+<!--        <img src="../static/img/projectmage.jpeg" class="question-image">-->
+<!--        <div class="container d-flex justify-content-center align-items-center">-->
+<!--            <button class="btn"><i class="gg-chevron-down-r"></i></button>-->
+<!--            <div class="h5 mb-0">0</div>-->
+<!--            <button class="btn"><i class="gg-chevron-up-r"></i></button>-->
+<!--        </div>-->
+<!--        <div class="h6 mb-0">2 answers</div>-->
+<!--    </div>-->
+<!--    <div class="col-9">-->
+<!--        <div class="question-title"><a href=""> Snapshot listener problem</a></div>-->
+<!--        <div class="question-text"> How to return an array of annotations from a function-->
+<!--            with a snapshot listener?-->
+<!--        </div>-->
+<!--        <button type="button" class="btn btn-outline-primary m-1 p-1">Swift</button>-->
+<!--        <button type="button" class="btn btn-success m-1 p-1">Firebase</button>-->
+<!--        <button type="button" class="btn btn-primary m-1 p-1">SwiftUI</button>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="row question align-items-center">-->
+<!--    <div class="col-3 d-flex flex-column align-items-center">-->
+<!--        <img src="{% static '/img/projectmage.jpeg' %}" class="question-image">-->
+<!--        <div class="container d-flex justify-content-center align-items-center">-->
+<!--            <button class="btn"><i class="gg-chevron-down-r"></i></button>-->
+<!--            <div class="h5 mb-0">200</div>-->
+<!--            <button class="btn"><i class="gg-chevron-up-r"></i></button>-->
+<!--        </div>-->
+<!--        <div class="h6 mb-0">2 answers</div>-->
+<!--    </div>-->
+<!--    <div class="col-9">-->
+<!--        <div class="question-title"><a href="">Second question.</a></div>-->
+<!--        <div class="question-text">Lorem Ipsum is simply dummy text of the printing and typesetting-->
+<!--            industry.-->
+<!--        </div>-->
+<!--        <button type="button" class="btn btn-warning m-1 p-1">Python</button>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="row question align-items-center">-->
+<!--    <div class="col-3 d-flex flex-column align-items-center">-->
+<!--        <img src="../static/img/projectmage.jpeg" class="question-image">-->
+<!--        <div class="container d-flex justify-content-center align-items-center">-->
+<!--            <button class="btn"><i class="gg-chevron-down-r"></i></button>-->
+<!--            <div class="h5 mb-0">0</div>-->
+<!--            <button class="btn"><i class="gg-chevron-up-r"></i></button>-->
+<!--        </div>-->
+<!--        <div class="h6 mb-0">0 answers</div>-->
+<!--    </div>-->
+<!--    <div class="col-9">-->
+<!--        <div class="question-title"><a href="">Third question.</a></div>-->
+<!--        <div class="question-text">Lorem Ipsum is simply dummy text of the printing and typesetting-->
+<!--            industry.-->
+<!--        </div>-->
+<!--        <button type="button" class="btn btn-warning m-1 p-1">Python</button>-->
+<!--        <button type="button" class="btn btn-secondary m-1 p-1">UIKit</button>-->
+<!--        <button type="button" class="btn btn-info m-1 p-1">Git</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+{% include 'components/pagination.html' %}
+
+{% endblock %}
+
+<!--{% block tags %}-->
+
+<!--{% for tag in tags %}-->
+
+<!--{% include 'components/tag-item.html' %}-->
+
+<!--{% endfor %}-->
+
+<!--{% endblock %}-->

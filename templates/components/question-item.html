@@ -1,0 +1,24 @@
+{% load static %}
+
+<div class="row question align-items-center">
+    <div class="col-3 d-flex flex-column align-items-center">
+        <img src="{% static '/img/projectmage.jpeg' %}" class="question-image">
+        <div class="vote-section container d-flex justify-content-center align-items-center">
+<!--            {% csrf_token %}-->
+            <button class="btn"><i class="gg-chevron-down-r"></i></button>
+            <div class="h5 mb-0">{{ question.totaly_votes|default:0 }}</div>
+<!--            <div class="h5 mb-0">{{ question.total_votes }}</div>-->
+            <button class="btn" data-id="{{ question.id }}"><i class="gg-chevron-up-r"></i></button>
+        </div>
+        <div class="h6 mb-0">{{ question.answers.count }} answers</div>
+    </div>
+    <div class="col-9">
+        <div class="question-title">
+            <a href="{% url 'question' question_id=question.id %}">{{ question.title }}</a>
+        </div>
+        <div class="question-text">{{ question.content }}</div>
+        <button type="button" class="btn btn-outline-primary m-1 p-1">Swift</button>
+        <button type="button" class="btn btn-success m-1 p-1">Firebase</button>
+        <button type="button" class="btn btn-primary m-1 p-1">SwiftUI</button>
+    </div>
+</div>

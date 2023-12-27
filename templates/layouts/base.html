@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static '/css/main.css' %}" rel="stylesheet">
+    <link href="{% static '/css/icons.css' %}" rel="stylesheet">
+    <title>AskVk</title>
+</head>
+
+<body>
+
+{% block navbar %}
+
+{% endblock %}
+
+<!--what flex-shrink is used for?-->
+<main class="flex-shrink-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+            <div class="col-3">
+                <table class="table table-borderless">
+                    <thead>
+                    <tr>
+                        <th>POPULAR TAGS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+<!--                            {% block tags %}-->
+
+<!--                            {% endblock %}-->
+                            <a class="btn btn-outline-primary m-1 p-1" href="{% url 'tag' tag_name='store2242' %}">store2242</a>
+                            <a class="btn btn-info m-1 p-1" href="{% url 'tag' tag_name='news7397' %}">news7397</a>
+                            <a class="btn btn-success m-1 p-1" href="{% url 'tag' tag_name='parent8947' %}">parent8947</a>
+                            <a class="btn btn-danger m-1 p-1" href="{% url 'tag' tag_name='bill94' %}">bill94</a>
+                            <a class="btn btn-warning m-1 p-1" href="{% url 'tag' tag_name='turn2983' %}">turn2983</a>
+                            <a class="btn btn-light m-1 p-1" href="{% url 'tag' tag_name='one6790' %}">one6790</a>
+<!--                            {% for tag in tags %}-->
+
+<!--                            {% include 'components/tag-item.html' %}-->
+
+<!--                            {% endfor %}-->
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table class="table table-borderless">
+                    <thead>
+                    <tr>
+                        <th>BEST MEMBERS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <ul class="list-group" style="margin-left: 15px; max-width: 250px">
+                                <li class="list-group-item"><a href="">Mr.Freeman</a></li>
+                                <li class="list-group-item"><a href="">LolKek</a></li>
+                                <li class="list-group-item"><a href="">fix1in1it</a></li>
+                                <li class="list-group-item"><a href="">Mr.White</a></li>
+                                <li class="list-group-item"><a href="">Mr.Black</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer py-3 bg-primary fixed-bottom">
+    <div class="container">
+        <span class="text-muted">2023 Alexander Zobnin</span>
+    </div>
+</footer>
+
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>

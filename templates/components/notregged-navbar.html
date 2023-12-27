@@ -1,0 +1,15 @@
+{% load static %}
+
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">AskVk</a>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button type="button" class="btn btn-outline-light">ASK!</button>
+        </form>
+        <div>
+            <a class="btn btn-outline-light" href="{% url 'login' %}">Login</a>
+            <a class="btn btn-light" href="{% url 'signup' %}">Sign-up</a>
+        </div>
+    </div>
+</nav>

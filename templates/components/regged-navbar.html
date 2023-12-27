@@ -1,0 +1,17 @@
+{% load static %}
+
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">AskVk</a>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <a class="btn btn-outline-light" href="{% url 'ask' %}">ASK!</a>
+        </form>
+        <div>
+            <img src="{% static '/img/projectmage.jpeg' %}" alt="mdo" width="40" height="40" class="rounded-circle">
+            <button type="button" class="btn">fix1in1it</button>
+            <a class="btn" href="{% url 'settings' %}">settings</a>
+            <a class="btn" href="{% url 'login' %}">log out</a>
+        </div>
+    </div>
+</nav>
